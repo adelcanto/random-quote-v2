@@ -9,10 +9,10 @@ function printQuote () {
   var randQuote = getRandomQuote(quotes.length);
   var message = '<p class="quote">' + randQuote.quote + '</p>';
   message += '<p class="source">' + randQuote.source ;
-  if (randQuote.citation != null) {
+  if (randQuote.citation !== null) {
     message += '<span class="citation">' + randQuote.citation + '</span>';
   }
-  if (randQuote.year != null) {
+  if (randQuote.year !== null) {
     message += '<span class="year">' + randQuote.year + '</span>';
   }
   message += '</p>';
