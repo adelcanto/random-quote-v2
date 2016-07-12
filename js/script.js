@@ -1,5 +1,6 @@
 var arr = quotes.slice(0);
 var randomNum;
+var timeoutID;
 
 // function to select and return a random quote object from the quotes array
 function getRandomQuote (num) {
@@ -14,7 +15,7 @@ function getRandomNumber () {
 
 // function to generate random color and change background and button color
 function getRandomColor () {
-  var randColor = 'rgb(' + getRandomNumber() + ', ' + getRandomNumber() + ', ' + getRandomNumber() + ')'
+  var randColor = 'rgb(' + getRandomNumber() + ', ' + getRandomNumber() + ', ' + getRandomNumber() + ')';
   document.getElementById('bodyStyle').style.backgroundColor = randColor;
   document.getElementById('loadQuote').style.backgroundColor = randColor;
 }
@@ -48,9 +49,14 @@ function printQuote () {
     document.getElementById('quote-box').innerHTML = message;
 }
 
+// function to set timer on the quotes to apper
+function delayedQuote() {
+  timeoutID = window.setInterval(printQuote,3000);
+}
+
 // call to function printQuote for random quote appearing when opening site
 printQuote();
-
+delayedQuote();
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
