@@ -46,7 +46,6 @@ function printQuote () {
     message += '</p>';
     getRandomColor();
     document.getElementById('quote-box').innerHTML = message;
-
 }
 
 // call to function printQuote for random quote appearing when opening site
